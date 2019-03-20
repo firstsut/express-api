@@ -8,8 +8,8 @@ const Authenticate = require('./middleware/authentication');
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const courses_route = require('./routes/courses');
-const genres_route = require('./routes/genres');
+const courses_route = require('./routes/courses.route');
+const genres_route = require('./routes/genres.route');
 
 const logDirectory = path.join(__dirname, 'logs');
 
