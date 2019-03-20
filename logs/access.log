@@ -36,3 +36,4 @@
 ::1 - - [20/Mar/2019:11:58:58 +0000] "DELETE /api/genres/5c922677d12d072570b23542 HTTP/1.1" 200 4 "-" "PostmanRuntime/7.6.1"
 ::1 - - [20/Mar/2019:12:19:32 +0000] "POST /api/genres/ HTTP/1.1" 201 56 "-" "PostmanRuntime/7.6.1"
 ::1 - - [20/Mar/2019:12:19:59 +0000] "PUT /api/genres/5c922fd4b1b073261c611bea HTTP/1.1" 200 57 "-" "PostmanRuntime/7.6.1"
+::1 - - [20/Mar/2019:13:34:54 +0000] "GET /api/genres/ HTTP/1.1" 200 209 "-" "PostmanRuntime/7.6.1"
