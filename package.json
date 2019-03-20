@@ -1,0 +1,37 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "description": "RESTful API using express js + mongoDB build simple project",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firstsut/express-api.git"
+  },
+  "keywords": [
+    "expressjs",
+    "nodejs",
+    "restful",
+    "api",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "Watcharaphong Ketcharoen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/firstsut/express-api/issues"
+  },
+  "homepage": "https://github.com/firstsut/express-api#readme",
+  "dependencies": {
+    "config": "^3.0.1",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "joi": "^14.3.1",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.19",
+    "morgan": "^1.9.1"
+  }
+}
