@@ -6,7 +6,7 @@ const ErrorResponse = require('../helper/response');
 
 route.get('/',async (req,res)=>{
     const genres = await GenreService.list();  
-    res.send(genres);
+    res.json(genres);
 });
 
 route.get('/:id',async (req,res)=>{ 
@@ -17,7 +17,7 @@ route.get('/:id',async (req,res)=>{
         });
     }
     const genre = await GenreService.findById(id);  
-    res.send(genre);
+    res.json(genre);
 });
 
 route.post('/',async (req,res)=>{
@@ -73,7 +73,7 @@ route.delete('/:id',async (req,res)=>{
         });
     }
     try{
-        const genre = await GenreService.del(id);
+        const genre = await GenreService.delete(id);
         if(!genre){
             return res.status(404).json({
                 error : ErrorResponse("Genre ID not found")

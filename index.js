@@ -36,8 +36,8 @@ app.use(morgan('combined', {
 mongoose.connect('mongodb://localhost:27017/api',
     { 
         useNewUrlParser: true,
-        useFindAndModify : false,
-        useCreateIndex : true
+        //useFindAndModify : false,
+        //useCreateIndex : true
     })
     .then(()=>{      
         log('Connected to MongoDB...');
