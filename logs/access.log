@@ -37,3 +37,4 @@
 ::1 - - [20/Mar/2019:12:19:32 +0000] "POST /api/genres/ HTTP/1.1" 201 56 "-" "PostmanRuntime/7.6.1"
 ::1 - - [20/Mar/2019:12:19:59 +0000] "PUT /api/genres/5c922fd4b1b073261c611bea HTTP/1.1" 200 57 "-" "PostmanRuntime/7.6.1"
 ::1 - - [20/Mar/2019:13:34:54 +0000] "GET /api/genres/ HTTP/1.1" 200 209 "-" "PostmanRuntime/7.6.1"
+::1 - - [21/Mar/2019:07:01:06 +0000] "GET /api/genres/ HTTP/1.1" 200 209 "-" "PostmanRuntime/7.6.1"
