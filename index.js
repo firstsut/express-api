@@ -10,6 +10,7 @@ const app = express();
 const mongoose = require('mongoose');
 const courses_route = require('./routes/courses.route');
 const genres_route = require('./routes/genres.route');
+const movies_route = require('./routes/movies.route');
 
 const logDirectory = path.join(__dirname, 'logs');
 
@@ -49,6 +50,7 @@ mongoose.connect('mongodb://localhost:27017/api',
 app.get('/',(req,res)=>{  res.send('Express RESTful API...'); });
 app.use('/api/courses',courses_route);
 app.use('/api/genres',genres_route);
+app.use('/api/movies',movies_route);
 
 
 //Start server
