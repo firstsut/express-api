@@ -34,4 +34,4 @@ function errorResponse(data){
     return response;
 }
 
-module.exports = errorResponse;
+module.exports.ErrorResponse = errorResponse;

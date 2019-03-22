@@ -3,7 +3,8 @@ const {genreSchema} = require('./genre');
 
 const movieSchema = new mongoose.Schema({
     genre : {
-        type : genreSchema,
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'Genre',
         required : true
     },
     title : {

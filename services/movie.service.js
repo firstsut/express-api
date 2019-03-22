@@ -4,7 +4,7 @@ const Movie = require('../models/movie');
 
 const MovieService = {
     list : async ()=>{
-        return Movie.find();
+        return Movie.find().populate('genre');
     },
     save : async (inputs,genre)=>{
         const movie = new Movie({
@@ -16,7 +16,7 @@ const MovieService = {
             numberInStock : inputs.numberInStock,
             dailyRentalRate : inputs.dailyRentalRate,
         });
-        return movie.save();
+        return movie.save().then(t => t.populate('genre').execPopulate());
     },
     update : async (id,inputs,genre)=>{
         return Movie.findByIdAndUpdate(id,{
@@ -29,13 +29,13 @@ const MovieService = {
                 numberInStock : inputs.numberInStock,
                 dailyRentalRate : inputs.dailyRentalRate,
             }
-        },{new : true});
+        },{new : true}).then(t => t.populate('genre').execPopulate());
     },
     delete : async (id)=>{
         return Movie.findByIdAndRemove(id);
     },
     findById : async (id) =>{
-        return Movie.populate('genre').findById(id);
+        return Movie.findById(id).populate('genre');
     },
     validate : (inputs)=>{
         const schema = {

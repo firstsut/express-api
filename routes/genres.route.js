@@ -2,7 +2,7 @@ const express = require('express');
 const route = express.Router();
 const GenreService = require('../services/genre.service');
 const {objectIdIsValid} = require('../helper/check');
-const ErrorResponse = require('../helper/response');
+const {ErrorResponse} = require('../helper/response');
 
 route.get('/',async (req,res)=>{
     const genres = await GenreService.list();  

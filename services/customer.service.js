@@ -1,20 +1,20 @@
-const Course = require('../models/course');
+const Customer = require('../models/customer');
 const Joi = require('joi');
 
-const CourseService = {
+const CustomerService = {
     list : async ()=>{
-        return Course.find().sort("name");
+        return Customer.find().sort("name");
     },
     save : async (inputs)=>{
-        const course = new Course({
+        const customer = new Customer({
             name : inputs.name,
             isGold : inputs.isGold || false,
             phone : inputs.phone,
         })
-        return course.save();
+        return customer.save();
     },
     update : async (id,inputs)=>{        
-        return Course.findByIdAndUpdate(id,{
+        return Customer.findByIdAndUpdate(id,{
             $set: {
                 name : inputs.name,
                 isGold : inputs.isGold || false,
@@ -23,10 +23,10 @@ const CourseService = {
         },{runValidators: true ,new :true});
     },
     findById : async (id)=>{
-        return Course.findById(id);
+        return Customer.findById(id);
     },
     delete : async (id)=>{
-        return  Course.findByIdAndRemove(id); 
+        return  Customer.findByIdAndRemove(id); 
     },
     validate : (inputs) =>{
         const schema = {
@@ -38,4 +38,4 @@ const CourseService = {
     }
 }
 
-module.exports = CourseService;
+module.exports = CustomerService;

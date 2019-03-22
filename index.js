@@ -8,9 +8,10 @@ const Authenticate = require('./middleware/authentication');
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const courses_route = require('./routes/courses.route');
+const customers_route = require('./routes/customers.route');
 const genres_route = require('./routes/genres.route');
 const movies_route = require('./routes/movies.route');
+const rentals_route = require('./routes/rentals.route');
 
 const logDirectory = path.join(__dirname, 'logs');
 
@@ -48,9 +49,10 @@ mongoose.connect('mongodb://localhost:27017/api',
 
 //use router
 app.get('/',(req,res)=>{  res.send('Express RESTful API...'); });
-app.use('/api/courses',courses_route);
+app.use('/api/customers',customers_route);
 app.use('/api/genres',genres_route);
 app.use('/api/movies',movies_route);
+app.use('/api/rentals',rentals_route);
 
 
 //Start server
