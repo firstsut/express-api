@@ -5,6 +5,7 @@ const fs = require('fs');
 const morgan = require('morgan');
 const path = require('path');
 const Authenticate = require('./middleware/authentication');
+const Error = require('./middleware/error');
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -53,6 +54,7 @@ app.use('/api/customers',customers_route);
 app.use('/api/genres',genres_route);
 app.use('/api/movies',movies_route);
 app.use('/api/rentals',rentals_route);
+app.use(Error);
 
 
 //Start server

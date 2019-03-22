@@ -11,19 +11,19 @@ route.get('/',async (req,res)=>{
 });
 
 
-route.get('/:id',async (req,res)=>{
+route.get('/:id',async (req,res,next)=>{
     try{
         const {id} = req.params;
         if(!objectIdIsValid(id)) return res.status(400).json({error : ErrorResponse("Movie ID inValid")})
         const movie  =await MovieService.find(id);
         return res.json(movie);
     }catch(err){
-        return res.status(500).json({error : ErrorResponse(err)});
+        next(err);       
     }
     
 });
 
-route.post('/',async (req,res)=>{
+route.post('/',async (req,res,next)=>{
     try{
         const {error} = MovieService.validate(req.body);
         if(error) return res.status(400).json({error : ErrorResponse(error.details)});
@@ -35,12 +35,12 @@ route.post('/',async (req,res)=>{
         return res.status(201).json(movie);
 
     }catch(err){
-        return res.status(500).json({error : ErrorResponse(err)});
+        next(err);    
     }
 });
 
 
-route.put('/:id',async (req,res)=>{
+route.put('/:id',async (req,res,next)=>{
     try{
         const {id} = req.params;
         if(!objectIdIsValid(id)) return res.status(400).json({error : ErrorResponse("Movie ID inVaid")});
@@ -57,11 +57,11 @@ route.put('/:id',async (req,res)=>{
         return res.json(movie);
         
     }catch(err){
-        return res.status(500).json({error : ErrorResponse(err)});
+        next(err);        
     }
 });
 
-route.delete("/:id",async (req,res)=>{
+route.delete("/:id",async (req,res,next)=>{
     try{
         const {id} = req.params;
         if(!objectIdIsValid(id)) return res.status(400).json({error : ErrorResponse("Movie ID inVaid")});
@@ -72,7 +72,7 @@ route.delete("/:id",async (req,res)=>{
         return res.json(movie);
         
     }catch(err){
-        return res.status(500).json({error : ErrorResponse(err)});
+        next(err);    
     }
 });
 

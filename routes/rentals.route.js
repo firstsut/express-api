@@ -13,7 +13,7 @@ route.get('/',async (req,res)=>{
 });
 
 
-route.get('/:id',async (req,res)=>{
+route.get('/:id',async (req,res,next)=>{
     try{
         const {id} = req.params;
         if(!objectIdIsValid(id)) return res.status(400).json({error : ErrorResponse("Rental ID inValid")});
@@ -21,12 +21,12 @@ route.get('/:id',async (req,res)=>{
         const rental = await RentalService.findById(id);
         return res.json(rental);
     }catch(err){
-        return res.status(500).json({error : ErrorResponse(err)});
+        next(err);       
     }
 });
 
 
-route.post('/',async (req,res)=>{
+route.post('/',async (req,res,next)=>{
      try{
 
         const {error} = RentalService.validate(req.body);
@@ -42,11 +42,11 @@ route.post('/',async (req,res)=>{
         return res.status(201).json(rental);
 
      }catch(err){  
-         return res.status(500).json({error : ErrorResponse(err)});
+        next(err);       
      }
 });
 
-route.put('/:id',async (req,res)=>{
+route.put('/:id',async (req,res,next)=>{
     try{
 
         
@@ -67,11 +67,11 @@ route.put('/:id',async (req,res)=>{
         return res.json(rental);
 
      }catch(err){  
-         return res.status(500).json({error : ErrorResponse(err)});
+        next(err);         
      }
 });
 
-route.delete('/:id',async (req,res)=>{
+route.delete('/:id',async (req,res,next)=>{
     try{
         
         const {id} = req.params;
@@ -83,7 +83,7 @@ route.delete('/:id',async (req,res)=>{
         return res.json(rental);
 
      }catch(err){
-         return res.status(500).json({error : ErrorResponse(err)});
+        next(err);
      }
 });
 module.exports = route;

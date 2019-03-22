@@ -20,7 +20,7 @@ route.get('/:id',async (req,res)=>{
     res.json(genre);
 });
 
-route.post('/',async (req,res)=>{
+route.post('/',async (req,res,next)=>{
     try{
         const {error} = GenreService.validate(req.body);
         if(error){
@@ -31,13 +31,11 @@ route.post('/',async (req,res)=>{
         const genre = await GenreService.save(req.body);
         return res.status(201).json(genre);
     }catch(err){
-        return res.status(500).json({
-            error : ErrorResponse(err)
-        })    
+        next(err);           
     }
 });
 
-route.put('/:id',async (req,res)=>{
+route.put('/:id',async (req,res,next)=>{
     const {id} = req.params;
     if(!objectIdIsValid(id)){
         return res.status(400).json({
@@ -59,13 +57,11 @@ route.put('/:id',async (req,res)=>{
         }
         return res.json(genre);
     }catch(err){
-        return res.status(500).json({
-            error : ErrorResponse(err)
-        })    
+        next(err);            
     }
 });
 
-route.delete('/:id',async (req,res)=>{
+route.delete('/:id',async (req,res,next)=>{
     const {id} = req.params;
     if(!objectIdIsValid(id)){
         return res.status(400).json({
@@ -81,9 +77,7 @@ route.delete('/:id',async (req,res)=>{
         }
         return res.json(genre);
     }catch(err){
-        return res.status(500).json({
-            error : ErrorResponse(err)
-        })   
+        next(err);          
     }
    
 });

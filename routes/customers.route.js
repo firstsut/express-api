@@ -9,7 +9,7 @@ route.get('/',async (req,res)=>{
     res.json(customers);
 });
 
-route.get('/:id',async (req,res)=>{
+route.get('/:id',async (req,res,next)=>{
     try{
         const {id} = req.params;
         if(!objectIdIsValid(id)){
@@ -18,13 +18,11 @@ route.get('/:id',async (req,res)=>{
         const customer = await CustomerService.findById(id);
         return res.json(customer);
     }catch(err){
-        res.status(500).json({
-            error : ErrorResponse(err)
-        })
+        next(err);       
     }
 });
 
-route.post('/',async (req,res)=>{
+route.post('/',async (req,res,next)=>{
     try{
         const {error} = CustomerService.validate(req.body);
         if(error){
@@ -33,11 +31,11 @@ route.post('/',async (req,res)=>{
         const customer  = await CustomerService.save(req.body);
         return res.status(201).json(customer);
     }catch(err){
-        return res.status(500).json({error : ErrorResponse(err)})
+        next(err);            
     }
 });
 
-route.put('/:id',async (req,res)=>{
+route.put('/:id',async (req,res,next)=>{
     try{
         const {id} = req.params;
         if(!objectIdIsValid(id)){
@@ -55,11 +53,11 @@ route.put('/:id',async (req,res)=>{
         }
         return res.json(customer);
     }catch(err){
-        res.status(500).json({error:ErrorResponse(err)});
+        next(err);           
     }
 });
 
-route.delete('/:id',async (req,res)=>{
+route.delete('/:id',async (req,res,next)=>{
     try{
         const {id} = req.params;
         if(!objectIdIsValid(id)) return res.status(400).json({error : ErrorResponse("Customer ID invalid")});
@@ -67,7 +65,7 @@ route.delete('/:id',async (req,res)=>{
         if(!customer) return res.status(404).json({error : ErrorResponse("Customer ID not found")});
         return res.json(customer);            
     }catch(err){
-        return res.status(500).json({error : ErrorResponse(err)});
+        next(err);       
     }
 });
 
