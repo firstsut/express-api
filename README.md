@@ -11,7 +11,8 @@ RESTful API  using express js + mongoDB  build  simple project
 ## Start server
 
 <pre>
-    1. npm start #command in package.json => nodemon index.js
+    1. export apiJwtSecretKey=mySecureKey #you can change "mySecureKey" to something value
+    2. npm start #command in package.json => nodemon index.js
 </pre>
 
 ## Open Api
