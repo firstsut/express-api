@@ -21,7 +21,7 @@ route.post('/',async (req,res,next)=>{
 
         const user = await UserService.save(_.pick(req.body,['name','email','password']));        
         
-        return res.header('x-auth-token',user.generateAuthToken(user._id)).status(201).json(_.pick(user,['_id','name','email']));
+        return res.header('x-auth-token',user.generateAuthToken(user)).status(201).json(_.pick(user,['_id','name','email']));
     }catch(err){
         next(err);
     }

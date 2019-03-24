@@ -15,7 +15,7 @@ route.post('/',async (req,res,next)=>{
         const validPass = await bcrypt.compare(req.body.password,user.password);
         if(!validPass) return res.status(400).json({error : ErrorResponse("Invalied email or password")});
                 
-        return res.send(user.generateAuthToken(user._id));
+        return res.send(user.generateAuthToken(user));
 
     }catch(err){
         next(err);

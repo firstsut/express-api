@@ -1,5 +1,5 @@
-# Express RESTful API
-RESTful API  using express js + mongoDB  build  simple project
+# Express RESTful API (Auth)
+RESTful API  using express js (Auth) + mongoDB  build  simple project
 
 ## Installation
 
@@ -11,14 +11,15 @@ RESTful API  using express js + mongoDB  build  simple project
 ## Start server
 
 <pre>
-    1. export apiJwtSecretKey=mySecureKey #you can change "mySecureKey" to something value
-    2. npm start #command in package.json => nodemon index.js
+    1. npm start #command in package.json
 </pre>
 
 ## Open Api
 
 <pre>
-    Open api genres <a href="http://127.0.0.1:3000/api/genres">http://127.0.0.1:3000/api/genres</a>  
+    1. Register Api POST : <a href="http://127.0.0.1:3000/api/users">http://127.0.0.1:3000/api/users</a>
+    2. Auth Api POST : <a href="http://127.0.0.1:3000/api/auth">http://127.0.0.1:3000/api/auth</a> #return token
+    3 Other api : /genres, /customers, /rentals, /movies etc. #before add header token key=x-auth-token
 </pre>
 
 ## RESTful API Designing guidelines 

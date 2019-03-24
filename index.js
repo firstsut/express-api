@@ -5,6 +5,7 @@ const fs = require('fs');
 const morgan = require('morgan');
 const path = require('path');
 const Authenticate = require('./middleware/authentication');
+const Admin = require('./middleware/admin');
 const Error = require('./middleware/error');
 const express = require('express');
 const app = express();
@@ -55,7 +56,9 @@ mongoose.connect('mongodb://localhost:27017/api',
     })
 
 //use router
-app.get('/',(req,res)=>{  res.send('Express RESTful API...'); });
+app.get('/',(req,res)=>{    
+     res.send('Express RESTful API...'); 
+    });
 app.use('/api/customers',Authenticate,customers_route);
 app.use('/api/genres',Authenticate,genres_route);
 app.use('/api/movies',Authenticate,movies_route);

@@ -1,3 +1,4 @@
 {
-    "name" : "Production Express Api"    
+    "name" : "Production Express Api",
+    "JWT_SECRET_KEY" : "apiJwtSecretKey"      
 }

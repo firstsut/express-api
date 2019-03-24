@@ -1,3 +1,4 @@
 {
-    "name" : "Development Express Api"    
+    "name" : "Development Express Api",
+    "JWT_SECRET_KEY" : "apiJwtSecretKey"    
 }
