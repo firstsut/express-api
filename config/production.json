@@ -1,4 +1,5 @@
 {
     "name" : "Production Express Api",
-    "JWT_SECRET_KEY" : "apiJwtSecretKey"      
+    "JWT_SECRET_KEY" : "apiJwtSecretKey" ,
+    "MONGO_DB_URL" : "localhost:27017/api"    
 }

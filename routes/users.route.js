@@ -6,9 +6,14 @@ const UserService = require('../services/user.service');
 const _ = require('lodash');
 
 
-route.get('/me',async (req,res)=>{   
-    const user = await UserService.findById(req.user._id);
-    res.json(user);
+route.get('/me',async (req,res,next)=>{   
+    try{
+        const user = await UserService.findById(req.user._id);
+        res.json(user);
+    }catch(err){
+        next(err);
+    }
+   
 });
 
 route.post('/',async (req,res,next)=>{
