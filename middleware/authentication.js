@@ -2,8 +2,7 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const {ErrorResponse} = require('../helper/response');
 
-function authentication(req,res,next){
-    //console.log('Authenticating custom middleware...');
+function authentication(req,res,next){    
     const token = req.header('x-auth-token');
     if(!token) return res.status(401).json({error : ErrorResponse("Access denied. No token provided")})
     

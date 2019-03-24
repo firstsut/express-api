@@ -1,5 +1,6 @@
+const winston = require('winston');
 function errorResponse(data){
-    console.log("ErrorResponse ... ",data);
+    winston.error("ErrorResponse ... "+data);
     let response = "Internal Server Error...";    
      if(data){
 
