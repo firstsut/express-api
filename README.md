@@ -30,7 +30,7 @@ RESTful API  using express js (Auth) + mongoDB  build  simple project
 ## Script data test
 
 <pre>
-    you can import collection data to mongoDB => resources/data/*.json
+    Can import collection data to mongoDB => resources/data/*.json
 </pre>
 
 ## RESTful API Designing guidelines 
