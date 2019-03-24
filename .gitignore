@@ -25,3 +25,4 @@ yarn-error.log*
 # Logs
 /logs/access.log
 /logs/error.log
+/logs/api_log.log

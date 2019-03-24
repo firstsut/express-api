@@ -4,8 +4,8 @@
   "description": "RESTful API using express js + mongoDB build simple project",
   "main": "index.js",
   "scripts": {
-    "prod" : "export NODE_ENV=production || set NODE_ENV=production&& nodemon index.js",
-    "dev" :"export NODE_ENV=development || set NODE_ENV=development&& nodemon index.js",
+    "prod": "export NODE_ENV=production || set NODE_ENV=production&& nodemon index.js",
+    "dev": "export NODE_ENV=development || set NODE_ENV=development&& nodemon index.js",
     "start": "export NODE_ENV=development || set NODE_ENV=development&& nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -40,6 +40,7 @@
     "lodash": "^4.17.11",
     "mongodb": "^3.1.13",
     "mongoose": "^5.4.19",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "winston": "^3.2.1"
   }
 }
