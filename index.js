@@ -1,19 +1,11 @@
 const express = require('express');
 const app = express();
-const DB = require('./lib/db');
-const Bootstrap = require('./lib/boostrap');
-const Router = require('./routes/index');
 const log = require('./middleware/logger');
 
-//auto load
-Bootstrap(app,express,log);
-
-//Connect mongoDB
-DB();
-    
-//load router
-Router(app);
-
+//auto load db,bootstrap,routes
+require('./lib/db')();
+require('./lib/boostrap')(app,express,log);
+require('./lib/routes')(app);
 
 //Start server
 const PORT = process.env.PORT || 3000;
