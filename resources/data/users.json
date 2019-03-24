@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5c960b1896bee7158cf5dfc2"},"name":"User1","email":"user1@gmail.com","password":"$2b$10$qu3S0edVA1d70HFJ3PUqMuyh.v08wZoG7s9oLgsccOHxWer77wnP.","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c97012f4cd7a503548cc22d"},"name":"Admin","isAdmin":true,"email":"admin@gmail.com","password":"$2b$10$qu3S0edVA1d70HFJ3PUqMuyh.v08wZoG7s9oLgsccOHxWer77wnP."}

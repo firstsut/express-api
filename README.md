@@ -27,6 +27,12 @@ RESTful API  using express js (Auth) + mongoDB  build  simple project
         - <a href="http://127.0.0.1:3000/api/movies">http://127.0.0.1:3000/api/movies</a>
 </pre>
 
+## Script data test
+
+<pre>
+    you can import collection data to mongoDB => resources/data/*.json
+</pre>
+
 ## RESTful API Designing guidelines 
 
 <p>

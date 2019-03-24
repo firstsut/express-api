@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5c94e38556c67e2ff87260fd"},"numberInStock":{"$numberInt":"593"},"dailyRentalRate":{"$numberInt":"100"},"genre":{"_id":{"$oid":"5c9213e42f6c3d33701d0d3b"}},"title":"Movie 2","__v":{"$numberInt":"0"},"xcv":{"$numberInt":"-1"}}
+{"_id":{"$oid":"5c94f6e2622c6925888befb9"},"numberInStock":{"$numberInt":"500"},"dailyRentalRate":{"$numberInt":"10"},"genre":{"$oid":"5c9213e42f6c3d33701d0d3b"},"title":"Movie 2","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c94f71be79f7012e0d483f8"},"numberInStock":{"$numberInt":"600"},"dailyRentalRate":{"$numberInt":"10"},"genre":{"$oid":"5c9213e42f6c3d33701d0d3b"},"title":"Movie 3","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c94f78689747f1f8cf97d79"},"numberInStock":{"$numberInt":"600"},"dailyRentalRate":{"$numberInt":"10"},"genre":{"$oid":"5c9213e42f6c3d33701d0d3b"},"title":"Movie 33","__v":{"$numberInt":"0"}}
