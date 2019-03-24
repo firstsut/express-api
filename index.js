@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const log = require('./middleware/logger');
 
-//auto load db,bootstrap,routes
+//auto load log,db,bootstrap,routes
+require('./lib/log')(app,log);
 require('./lib/db')();
-require('./lib/boostrap')(app,express,log);
+require('./lib/boostrap')(app,express);
 require('./lib/routes')(app);
 
 //Start server
